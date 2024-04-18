@@ -10,7 +10,7 @@ I'll be using boostraping the project with [T3 stack](https://create.t3.gg/). Pl
 
 ## Todo
 
-- [X] Creating repo and pushing to GitHub
+- [x] Creating repo and pushing to GitHub
 - [ ] Linking repo to Vercel
 - [ ] Deploying to Vercel
 - [ ] Setting out database
@@ -19,3 +19,5 @@ I'll be using boostraping the project with [T3 stack](https://create.t3.gg/). Pl
 - [ ] Securitization
 - [ ] Adding rate limits w/ stash
 - [ ] ...
+
+

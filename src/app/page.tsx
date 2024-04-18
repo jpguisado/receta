@@ -1,7 +1,7 @@
+import Link from "next/link";
+
 export default function HomePage() {
   return (
-    <div className="bg-blue-500">
-      This is the content of the page
-    </div>
+    <div>Hello World from HomPage</div>
   );
 }
