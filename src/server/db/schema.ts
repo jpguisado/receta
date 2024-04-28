@@ -3,7 +3,7 @@
 
 import { sql } from "drizzle-orm";
 import {
-  bigint,
+  int,
   index,
   mysqlTableCreator,
   timestamp,
@@ -18,10 +18,10 @@ import {
  */
 export const createTable = mysqlTableCreator((name) => `receta_${name}`);
 
-export const posts = createTable(
-  "post",
+export const Ingredient = createTable(
+  "ingredient",
   {
-    id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
+    id: int("id",).primaryKey().autoincrement(),
     name: varchar("name", { length: 256 }),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
