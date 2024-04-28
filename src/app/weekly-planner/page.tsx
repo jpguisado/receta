@@ -7,7 +7,7 @@ import { Button } from "~/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table"
 import type { daySchema } from "~/lib/types/day.td"
-import type { dishList, dishSchema } from "~/lib/types/dish.td"
+import { dishList, dishSchema } from "~/lib/types/dish.td"
 import type { mealSchema } from "~/lib/types/meals.td"
 import type { oneWeekSchema, plannedDaySchema } from "~/lib/types/plannedDay.td"
 import type { plannedMealSchema } from "~/lib/types/plannedMeal.td"
@@ -15,7 +15,8 @@ import { fetchDishes } from "~/server/data-layer";
 
 export default function WeeklyPlanner() {
     
-    const { data } = useQuery({ queryKey: ['dish'], queryFn: fetchDishes })
+    const { data, isLoading } = useQuery({ queryKey: ['dish'], queryFn: fetchDishes })
+    //const data: z.infer<typeof dishSchema> = [{name: 'Tortilla de patat', ingredients: [{name: ''}] }]
 
     const [day, setDay] = useState<z.infer<typeof daySchema>>();
     const [meal, setMeal] = useState<z.infer<typeof mealSchema>>();
@@ -267,11 +268,12 @@ export default function WeeklyPlanner() {
                     <SelectValue placeholder="Selecciona el plato" />
                 </SelectTrigger>
                 <SelectContent>
-                    {data!.map((dish) => {
+                    {isLoading ? 'estoy cargando' : 'ya he cargado'}
+                    {/* {data!.map((dish) => {
                         return (
                             <SelectItem key={dish.name} value={dish}>{dish.name}</SelectItem>
                         )
-                    })}
+                    })} */}
                 </SelectContent>
             </Select>
 
