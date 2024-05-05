@@ -244,6 +244,7 @@ export default function WeeklyPlanner() {
     return (
         <div className="gap-4 flex flex-col">
             <div className="text-xl">Semana 1</div>
+
             <div className="flex justify-around">
                 <Button onClick={() => setDay({ name: 'MONDAY', order: 0 })} className={`flex border hover:bg-slate-300 transition-colors duration-200 rounded-full h-8 w-8 justify-center items-center ${day?.name === 'MONDAY' ? 'bg-slate-400' : ''}`}>L</Button>
                 <Button onClick={() => setDay({ name: 'TUESDAY', order: 1 })} className={`flex border hover:bg-slate-300 transition-colors duration-200 rounded-full h-8 w-8 justify-center items-center ${day?.name === 'TUESDAY' ? 'bg-slate-400' : ''}`}>M</Button>
@@ -254,6 +255,7 @@ export default function WeeklyPlanner() {
                 <Button onClick={() => setDay({ name: 'SUNDAY', order: 6 })} className={`flex border hover:bg-slate-300 transition-colors duration-200 rounded-full h-8 w-8 justify-center items-center ${day?.name === 'SUNDAY' ? 'bg-slate-400' : ''}`}>D</Button>
             </div>
 
+{/* 
             <div className="flex gap-5 justify-around">
                 <Button variant={"ghost"} onClick={() => setMeal({ name: 'BREAKFAST', order: 0 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'BREAKFAST' ? 'bg-slate-400' : ''}`}>BREAKFAST</Button>
                 <Button variant={"ghost"} onClick={() => setMeal({ name: 'MIDMORNING', order: 1 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'MIDMORNING' ? 'bg-slate-400' : ''}`}>MIDMORNING</Button>
@@ -262,6 +264,17 @@ export default function WeeklyPlanner() {
                 <Button variant={"ghost"} onClick={() => setMeal({ name: 'SNACK', order: 4 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'SNACK' ? 'bg-slate-400' : ''}`}>SNACK</Button>
                 <Button variant={"ghost"} onClick={() => setMeal({ name: 'COMPLEMENTARY', order: 5 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'COMPLEMENTARY' ? 'bg-slate-400' : ''}`}>COMPLEMENTARY</Button>
             </div>
+
+*/}
+
+            <div className="flex gap-2 justify-around">
+                <Button variant={"ghost"} onClick={() => setMeal({ name: 'BREAKFAST', order: 0 })} className={`flex p-1 w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'BREAKFAST' ? 'bg-slate-400' : ''}`}>DE</Button>
+                <Button variant={"ghost"} onClick={() => setMeal({ name: 'MIDMORNING', order: 1 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'MIDMORNING' ? 'bg-slate-400' : ''}`}>MM</Button>
+                <Button variant={"ghost"} onClick={() => setMeal({ name: 'LUNCH', order: 2 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'LUNCH' ? 'bg-slate-400' : ''}`}>AL</Button>
+                <Button variant={"ghost"} onClick={() => setMeal({ name: 'SNACK', order: 4 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'SNACK' ? 'bg-slate-400' : ''}`}>ME</Button>
+                <Button variant={"ghost"} onClick={() => setMeal({ name: 'DINNER', order: 3 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'DINNER' ? 'bg-slate-400' : ''}`}>CE</Button>
+                <Button variant={"ghost"} onClick={() => setMeal({ name: 'COMPLEMENTARY', order: 5 })} className={`flex w-full border hover:bg-slate-300 transition-colors duration-200 justify-center items-center ${meal?.name === 'COMPLEMENTARY' ? 'bg-slate-400' : ''}`}>++</Button>
+            </div> 
 
             <Select onValueChange={(e: z.infer<typeof dishSchema>) => { setDish(e) }}>
                 <SelectTrigger className="w-full">
@@ -279,7 +292,7 @@ export default function WeeklyPlanner() {
 
             <Button onClick={() => addDayToPlan(day!, meal!, dish!)}>Añadir</Button>
 
-            <Table className="leading-none">
+            {/* <Table className="leading-none">
                 <TableHeader>
                     <TableRow>
                         <TableHead className="">Día</TableHead>
@@ -305,7 +318,7 @@ export default function WeeklyPlanner() {
                     })}
                 </TableBody>
             </Table>
-            <Button onClick={() => saveWeeklyPlan()}>Guardar planificación</Button>
+            <Button onClick={() => saveWeeklyPlan()}>Guardar planificación</Button> */}
         </div>
     )
 }
